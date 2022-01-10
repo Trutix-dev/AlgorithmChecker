@@ -23,17 +23,6 @@ public class Main {
     	sorters.add(new InsertionSort());
     	sorters.add(new MergeSort());
     	
-    	int[] testarray = {5,4,9,6,12,44,777,44,5};
-    	
-    	for(int i = 0; i < sorters.size(); i++) {
-    		System.out.println("using sort algorithm: " + sorters.get(i).getType());
-    		int[] out = sorters.get(i).sort(testarray);
-    		for(int j = 0; j < out.length; j++) {
-    			System.out.print(out[j] + " ");
-    		}
-    		System.out.println();
-    	}
-    	
     	buildGui(sorters);
     	
     }
