@@ -1,5 +1,6 @@
-public class InsertionSort {
-    public static void Insertion(int[] targetArray){
+public class InsertionSort implements SortAlgorithm{
+	
+    private int[] Insertion(int[] targetArray){
 
         for (int i = 0; i < targetArray.length; i++){
 
@@ -13,32 +14,17 @@ public class InsertionSort {
 
             targetArray[x + 1] = currentElement;
         }
+        
+        return targetArray;
 
     }
-    static void printArray(int[] targetArray){
-        int n = targetArray.length;
-        for (int i = 0; i < n; i++){
-            System.out.print(i+1 + ". Elemente des Arrays = " + targetArray[i]);
-        }
+    
+    public int[] sort(int[] inputArray) {
+    	return Insertion(inputArray);
+    }
+    
+    public AlgorithmType getType() {
+    	return AlgorithmType.INSERTIONSORT;
     }
 
-    public void sortByInsertion(int[] targetArray){
-
-        //Array muss aus Input kommen. Instance der GUI klasse und Variable hier überbringen?
-
-        System.out.println("Elements in the array before sorting: ");
-        for (int x:targetArray){
-            System.out.println(x);
-        }
-
-        System.out.println(); //Line breaker
-        System.out.println("Array wird sortiert...");
-        System.out.println(); //Line breaker
-
-        Insertion(targetArray);
-
-        System.out.println("Array nach sortierung: ");
-
-        printArray(targetArray);
-    }
 }
